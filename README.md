@@ -1,6 +1,6 @@
-# Cronofy Calendar View: component prototype
+# Cronofy Components
 
-* version: 0.1.0
+* version: 0.2.0
 
 > Note: this is a pre-alpha prototype. Breaking-changes may occur on minor version updates. The current components are provided for demoing and experimentation only. This document will be updated when new versions are released.
 
@@ -66,19 +66,21 @@ These apply to all components.
 
 ### Agenda options
 
+The Agenda component 
+
 ### SlotPicker options
 
 * `query` [required]: object that matches a valid Cronofy [Availability request](https://www.cronofy.com/developers/api/#availability).
 * `callback` [required]: the function to be called when a slot has been selected by the user. Receives an object for that slot is the form: 
     
-    {
+    ```{
       "start": "2018-11-13T09:00:00Z",
       "end": "2018-11-13T11:00:00Z",
       "participants": [
         { "sub": "acc_567236000909002" },
         { "sub": "acc_678347111010113" }
       ]
-    }
+    }```
 
 * `confirm`[optional]: Boolean that defines if an extra "confirmation" step is used after a user selects a slot from the list. Defaults to `true`.
 
@@ -88,33 +90,27 @@ Example Slot Picker init call:
     CronofyComponents.SlotPicker({
         token: "TOKEN_GOES_HERE",
         target: 'cronofy-slot-picker',
-        api_domain:"http://local.cronofy.com",
         query: {
             participants: [
                 {
                     required: "all",
                     members: [
-                        { sub: "test_busy_1000-1030_1430-1540_2200-0600" },
-                        { sub: "acc_5b97a52a5c92eb0cc0400ffe" },
-                        { sub: "test_busy_1130-1200_1445-1500" }
+                        { sub: "acc_12345678" },
+                        { sub: "acc_87654321" }
                     ]
                 }
             ],
             required_duration: { minutes: 30 },
             available_periods: [
                 { start: "2018-11-09T09:00:00Z", end: "2018-11-09T17:00:00Z" },
-                { start: "2018-11-10T09:00:00Z", end: "2018-11-10T17:00:00Z" },
-                { start: "2018-11-11T09:00:00Z", end: "2018-11-11T17:00:00Z" }
+                { start: "2018-11-10T09:00:00Z", end: "2018-11-10T17:00:00Z" }
             ]
         },
         styles: {
             prefix: "custom-name",
-            height: "400px",
-            // padding: 0
+            height: "400px"
         },
-        callback: slot => console.log('callback',slot),
-        // confirm: false,
-        demo: false
+        callback: slot => console.log('callback',slot)
     });
 
 ## Custom Styles
@@ -128,3 +124,4 @@ Example Slot Picker init call:
     * `lines`: the color used for borders
     * `highlight`: the primary color used for interactions (hover, focus, etc.)
     * `background`: the background color for the component. By default, components are transparent and therefore inherit the background color of whatever element they are mounted within.
+    * theme: sometimes a selection of colors are required (for instance, to differentiate different calendars within the Agenda view). For these instances, you can define an array of colors here. For example: `theme: ["#bada55","#coffee,"#133337"]`.
