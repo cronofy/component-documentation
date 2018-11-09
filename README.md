@@ -119,9 +119,9 @@ Example Slot Picker init call:
 * `prefix`: customizable elements are given a prefixed class name using this value. For example, if the `prefix` was set as "Foo", the class name on a slot element would be `Foo__slot`. Defaults to the name of the component (e.g. `"SlotPicker"`).
 * `height`: the height of the component in pixels. Defaults to `"300px"`.
 * `padding`: the size of the padding around the edge of the component. Defaults to `"1em"`.
-* `colors`: there are several colors that can be customized here. All options take a HEX color code string (e.g. `"#bada55"`)
+<!-- * `colors`: there are several colors that can be customized here. All options take a HEX color code string (e.g. `"#bada55"`)
     * `text`: the color for text elements in the component
     * `lines`: the color used for borders
     * `highlight`: the primary color used for interactions (hover, focus, etc.)
     * `background`: the background color for the component. By default, components are transparent and therefore inherit the background color of whatever element they are mounted within.
-    * theme: sometimes a selection of colors are required (for instance, to differentiate different calendars within the Agenda view). For these instances, you can define an array of colors here. For example: `theme: ["#bada55","#coffee,"#133337"]`.
+    * theme: sometimes a selection of colors are required (for instance, to differentiate different calendars within the Agenda view). For these instances, you can define an array of colors here. For example: `theme: ["#bada55","#coffee,"#133337"]`. -->
