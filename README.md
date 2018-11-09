@@ -63,9 +63,9 @@ For demo purposes, it is possible to bypass the authentication step. If the `dem
         "origin": "http://localhost"
     }
 
-For `"component": "COMPONENT_TYPE",` use `agenda` for the Agenda component, and `availability` for the Slot Picker.
-
-For `"subs": ["acc_1234"],` pass a single sub ID for the Agenda component (still within an array), and an array of all the participants' subs for the Slot Picker.
+* `component` [required]:  use `agenda` for the Agenda component, and `availability` for the Slot Picker.
+* `subs` [required]: pass a single sub ID for the Agenda component (still within an array: `["acc_1234"]`), and an array of all the participants' subs for the Slot Picker (`["acc_1234", "acc_4321", "acc_6789"]`).
+* `origin` [required]: the URL of the app where the component will be used.
 
 Expected response:
 
@@ -73,7 +73,7 @@ Expected response:
         "component_token": {
             "component": "agenda",
         "origin": "http://api.cronofy.com",
-        "token": "ExBd9WRAlLtojDivrCxeKECYO7uwVqdVFXspRdoLMD1Hon3TwifcXuJYVflK2ikMpLEthtKhxC77LDoWCYWxug",
+        "token": "YOUR_NEW_COMPONENT_TOKEN",
         "expires_in": 64800
         }
     }
