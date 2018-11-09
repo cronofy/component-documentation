@@ -86,7 +86,7 @@ Expected response:
 * `api_domain` [optional]: Override the default Default value is `"http://api.cronofy.com"`.
 * `colors` [optional]: The Agenda component can be assigned a custom color palette for the calendars by passing in an array of HEX values to the colors.calendars option. For example: `colors: { calendars: [ "#0074d9", "#ffdc00" ] }`
 
-Example Agenda init:
+### Example Agenda init:
 
     <div id="cronofy-agenda"></div>
     <script src="https://s3.eu-west-2.amazonaws.com/component-demo/CronofyComponents.v0.2.0.js"></script>
@@ -107,14 +107,14 @@ Example Agenda init:
 * `query` [required]: object that matches a valid Cronofy [Availability request](https://www.cronofy.com/developers/api/#availability).
 * `callback` [required]: the function to be called when a slot has been selected by the user. Receives an object for that slot is the form: 
     
-    ```{
+    {
       "start": "2018-11-13T09:00:00Z",
       "end": "2018-11-13T11:00:00Z",
       "participants": [
-        { "sub": "acc_567236000909002" },
-        { "sub": "acc_678347111010113" }
+        { "sub": "acc_12345678" },
+        { "sub": "acc_87654321" }
       ]
-    }```
+    }
 
 * `confirm`[optional]: Boolean that defines if an extra "confirmation" step is used after a user selects a slot from the list. Defaults to `true`.
 * `styles` [optional]: an object containing you custom style values See [Custom Styles](#custom-styles) for details of valid options.
@@ -123,7 +123,7 @@ Example Agenda init:
     * `height`: the height of the component in pixels. Defaults to `"300px"`.
     * `padding`: the size of the padding around the edge of the component. Defaults to `"1em"`.
 
-Example Slot Picker init:
+### Example Slot Picker init:
 
     <div id="cronofy-slot-picker"></div>
     <script src="https://s3.eu-west-2.amazonaws.com/component-demo/CronofyComponents.v0.2.0.js"></script>
