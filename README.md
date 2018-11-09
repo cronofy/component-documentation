@@ -15,7 +15,7 @@
 
 All components accept some global options, and each have additional component-specific options. For all components, load into your app by including the source `.js` file into your page.
 
-    <script src="https://s3.eu-west-2.amazonaws.com/component-demo/CronofyComponents.v0.2.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.2.1.js"></script>
 
 Once you've included the `js` file in your project, you can initialize the desired component using the corresponding method and passing in an options as an object. For example, to load the "Agenda" component, your script would look like this:
 
@@ -30,7 +30,7 @@ Using the above `Agenda()` example, CronofyComponents will look for a DOM elemen
 A simple integration into an `index.html` file would look something like this:
 
     <div id="cronofy-agenda"></div>
-    <script src="https://s3.eu-west-2.amazonaws.com/component-demo/CronofyComponents.v0.2.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.2.1.js"></script>
     <script>
         CronofyComponents.Agenda({
             token: "YOUR_TOKEN",
@@ -41,7 +41,7 @@ A simple integration into an `index.html` file would look something like this:
 For demo purposes, it is possible to bypass the authentication step. If the `demo` option is set to `true`, the component will not make any API calls and will display mock content.
 
     <div id="cronofy-agenda"></div>
-    <script src="https://s3.eu-west-2.amazonaws.com/component-demo/CronofyComponents.v0.2.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.2.1.js"></script>
     <script>
         CronofyComponents.Agenda({
             target: "cronofy-agenda",
@@ -89,7 +89,7 @@ Expected response:
 ### Example Agenda init:
 
     <div id="cronofy-agenda"></div>
-    <script src="https://s3.eu-west-2.amazonaws.com/component-demo/CronofyComponents.v0.2.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.2.1.js"></script>
     <script>
         CronofyComponents.Agenda({
             token: "YOUR_TOKEN",
@@ -123,10 +123,18 @@ Expected response:
     * `height`: the height of the component in pixels. Defaults to `"300px"`.
     * `padding`: the size of the padding around the edge of the component. Defaults to `"1em"`.
 
+Available classes:
+
+* `.{PREFIX}__slot`
+* `.{PREFIX}__slots-header`
+* `.{PREFIX}__confirmation-wrapper`
+* `.{PREFIX}__confirmation-summary`
+
+
 ### Example Slot Picker init:
 
     <div id="cronofy-slot-picker"></div>
-    <script src="https://s3.eu-west-2.amazonaws.com/component-demo/CronofyComponents.v0.2.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.2.1.js"></script>
     <script>
         CronofyComponents.SlotPicker({
             token: "TOKEN_GOES_HERE",
