@@ -78,7 +78,15 @@ Expected response:
         }
     }
 
-## Agenda options
+---
+
+## Agenda Component
+
+The Agenda component displays events for a single-day period. The primary view is a column of event summaries, with the ability to navigate to the next or previous day (up to a maximum of 14 days into the past and 90 days into the future). Clicking an event reveals the full details for that event. 
+
+The Agenda component will fill the width of its parent DOM element, and has a set height of 400px. The default colors for different calendars can be set by passing an array of hex codes to the `colors.calendars` option.
+
+### Agenda options
 
 * `token` [required]: auth token for API connection. *Not required if the component is activated in demo mode.*
 * `demo`: boolean to activate demo-mode. Defaults to `false`. If `demo` is set to `true` the component will return mock data (and not make any API calls). 
@@ -98,7 +106,13 @@ Expected response:
         });
     </script>
 
-## SlotPicker options
+## SlotPicker component
+
+The Slot Picker component is an embeddable version of the (Real Time Scheduling)[https://www.cronofy.com/real-time-scheduling] interface. It converts an [availability query](https://www.cronofy.com/developers/api/#availability) into a list of bookable slots. When a user confirms a slot, the component passes that slot's details into a callback function (provided when the component is initialised).
+
+The Slot Picker component will fill the width of its parent DOM element. The height defaults to 600px with internal padding of 1em, but these can be overridden through the `styles` option.
+
+### SlotPicker options
 
 * `token` [required]: auth token for API connection. *Not required if the component is activated in demo mode.*
 * `demo`: boolean to activate demo-mode. Defaults to `false`. If `demo` is set to `true` the component will return mock data (and not make any API calls). 
