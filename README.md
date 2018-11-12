@@ -6,8 +6,8 @@
 
 ## Components covered by this document
 
-* [CronofyComponents.Agenda](#agenda-options)
-* [CronofyComponents.SlotPicker](#slotpicker-options)
+* [CronofyComponents.Agenda](#agenda-component)
+* [CronofyComponents.SlotPicker](#slotpicker-component)
 
 ---
 
