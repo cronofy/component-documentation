@@ -90,7 +90,7 @@ The Agenda component will fill the width of its parent DOM element, and has a se
 
 * `token` [required]: auth token for API connection. *Not required if the component is activated in demo mode.*
 * `demo`: boolean to activate demo-mode. Defaults to `false`. If `demo` is set to `true` the component will return mock data (and not make any API calls). 
-* `target` [required]: ID of mounting element (e.g. 'cronofy-agenda').
+* `target` [required]: ID of mounting element (e.g. "cronofy-agenda").
 * `api_domain` [optional]: Override the default Default value is `"http://api.cronofy.com"`.
 * `colors` [optional]: The Agenda component can be assigned a custom color palette for the calendars by passing in an array of HEX values to the colors.calendars option. For example: `colors: { calendars: [ "#0074d9", "#ffdc00" ] }`
 
@@ -102,7 +102,7 @@ The Agenda component will fill the width of its parent DOM element, and has a se
         CronofyComponents.Agenda({
             token: "YOUR_TOKEN",
             target: "cronofy-agenda",
-            colors: { calendars: [ "#bada55", "#coffee, "#133337" ] }
+            colors: { calendars: [ "#bada55", "#c0ffee", "#133337" ] }
         });
     </script>
 
@@ -110,13 +110,13 @@ The Agenda component will fill the width of its parent DOM element, and has a se
 
 The Slot Picker component is an embeddable version of the (Real Time Scheduling)[https://www.cronofy.com/real-time-scheduling] interface. It converts an [availability query](https://www.cronofy.com/developers/api/#availability) into a list of bookable slots. When a user confirms a slot, the component passes that slot's details into a callback function (provided when the component is initialised).
 
-The Slot Picker component will fill the width of its parent DOM element. The height defaults to 600px with internal padding of 1em, but these can be overridden through the `styles` option.
+The Slot Picker component will fill the width of its parent DOM element. The height defaults to 300px with internal padding of 1em, but these can be overridden through the `styles` option.
 
 ### SlotPicker options
 
 * `token` [required]: auth token for API connection. *Not required if the component is activated in demo mode.*
 * `demo`: boolean to activate demo-mode. Defaults to `false`. If `demo` is set to `true` the component will return mock data (and not make any API calls). 
-* `target` [required]: ID of mounting element (e.g. 'cronofy-slot-picker').
+* `target` [required]: ID of mounting element (e.g. "cronofy-slot-picker").
 * `api_domain` [optional]: Override the default Default value is `"http://api.cronofy.com"`.
 * `query` [required]: object that matches a valid Cronofy [Availability request](https://www.cronofy.com/developers/api/#availability).
 * `callback` [required]: the function to be called when a slot has been selected by the user. Receives an object for that slot is the form: 
@@ -152,7 +152,7 @@ Available classes:
     <script>
         CronofyComponents.SlotPicker({
             token: "TOKEN_GOES_HERE",
-            target: 'cronofy-slot-picker',
+            target: "cronofy-slot-picker",
             query: {
                 participants: [
                     {
@@ -173,6 +173,6 @@ Available classes:
                 prefix: "custom-name",
                 height: "400px"
             },
-            callback: slot => console.log('callback',slot)
+            callback: slot => console.log("callback",slot)
         });
     </script>
