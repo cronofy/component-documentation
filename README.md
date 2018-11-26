@@ -191,7 +191,7 @@ The Availability Viewer component will fill the width of its parent DOM element.
 ### AvailabilityViewer options
 
 * `token` [required]: auth token for API connection. *Not required if the component is activated in demo mode.*
-<!-- * `demo`: boolean to activate demo-mode. Defaults to `false`. If `demo` is set to `true` the component will return mock data (and not make any API calls).  -->
+* `demo`: boolean to activate demo-mode. Defaults to `false`. If `demo` is set to `true` the component will return mock data (and not make any API calls). 
 * `target` [required]: ID of mounting element (e.g. "cronofy-availability-viewer").
 * `api_domain` [optional]: Override the default Default value is `"http://api.cronofy.com"`.
 * `query` [required]: object that matches a valid Cronofy [Availability request](https://www.cronofy.com/developers/api/#availability).
@@ -199,6 +199,7 @@ The Availability Viewer component will fill the width of its parent DOM element.
     * `start_time` [optional]: hide any available slots before this time. Defaults to "09:00".
     * `end_time` [optional]: hide any available slots `after` this time. Defaults to "17:30".
     * `interval` [optional]: When selecting a slot, the available options are staggered by this amount. Defaults to `15`.
+* `locale` [optional]: The Availability Viewer supports localization (e.g. `locale: "fr"` to load in French). Defaults to browser language setting.
 * `callback` [required]: the function to be called when a slot has been selected by the user. Receives an object for that slot in this format: 
     
     {
@@ -209,7 +210,6 @@ The Availability Viewer component will fill the width of its parent DOM element.
         { "sub": "acc_87654321" }
       ]
     }
-
 
 ### Example AvailabilityViewer init:
 
