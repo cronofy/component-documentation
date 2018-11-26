@@ -8,6 +8,7 @@
 
 * [CronofyComponents.Agenda](#agenda-component)
 * [CronofyComponents.SlotPicker](#slotpicker-component)
+* [CronofyComponents.AvailabilityViewer](#availabilityviewer-component)
 
 ---
 
@@ -63,8 +64,8 @@ For demo purposes, it is possible to bypass the authentication step. If the `dem
         "origin": "http://localhost"
     }
 
-* `component` [required]:  use `agenda` for the Agenda component, and `availability` for the Slot Picker.
-* `subs` [required]: pass a single sub ID for the Agenda component (still within an array: `["acc_1234"]`), and an array of all the participants' subs for the Slot Picker (`["acc_1234", "acc_4321", "acc_6789"]`).
+* `component` [required]:  use `agenda` for the Agenda component, and `availability` for the Slot Picker and Availability Viewer components.
+* `subs` [required]: pass a single sub ID for the Agenda component (still within an array: `["acc_1234"]`), and an array of all the participants' subs for the Slot Picker and Availability Viewer (`["acc_1234", "acc_4321", "acc_6789"]`).
 * `origin` [required]: the URL of the app where the component will be used.
 
 Expected response:
@@ -106,6 +107,8 @@ The Agenda component will fill the width of its parent DOM element, and has a se
         });
     </script>
 
+---
+
 ## SlotPicker component
 
 The Slot Picker component is an embeddable version of the (Real Time Scheduling)[https://www.cronofy.com/real-time-scheduling] interface. It converts an [availability query](https://www.cronofy.com/developers/api/#availability) into a list of bookable slots. When a user confirms a slot, the component passes that slot's details into a callback function (provided when the component is initialised).
@@ -119,7 +122,7 @@ The Slot Picker component will fill the width of its parent DOM element. The hei
 * `target` [required]: ID of mounting element (e.g. "cronofy-slot-picker").
 * `api_domain` [optional]: Override the default Default value is `"http://api.cronofy.com"`.
 * `query` [required]: object that matches a valid Cronofy [Availability request](https://www.cronofy.com/developers/api/#availability).
-* `callback` [required]: the function to be called when a slot has been selected by the user. Receives an object for that slot is the form: 
+* `callback` [required]: the function to be called when a slot has been selected by the user. Receives an object for that slot in this format: 
     
     {
       "start": "2018-11-13T09:00:00Z",
@@ -174,5 +177,76 @@ Available classes:
                 height: "400px"
             },
             callback: slot => console.log("callback",slot)
+        });
+    </script>
+
+---
+
+## AvailabilityViewer component
+
+The Availability Viewer component is an interactive week-based display of availability. It converts an [availability query](https://www.cronofy.com/developers/api/#availability) into a grid of days with free/busy times displayed. If the requested available periods span more than one week, the user can browse those weeks with the provided navigation buttons. Users can pre-select an available slot for any available block of time, and then confirm that slot with a button-click. When a user confirms a slot, the component passes that slot's details into a callback function (provided when the component is initialised).
+
+The Availability Viewer component will fill the width of its parent DOM element. The height of the component depends on the range of the provided available options (i.e. showing available slots between 9am and 5pm will take up more space that the display for 9am to 2pm).
+
+### AvailabilityViewer options
+
+* `token` [required]: auth token for API connection. *Not required if the component is activated in demo mode.*
+<!-- * `demo`: boolean to activate demo-mode. Defaults to `false`. If `demo` is set to `true` the component will return mock data (and not make any API calls).  -->
+* `target` [required]: ID of mounting element (e.g. "cronofy-availability-viewer").
+* `api_domain` [optional]: Override the default Default value is `"http://api.cronofy.com"`.
+* `query` [required]: object that matches a valid Cronofy [Availability request](https://www.cronofy.com/developers/api/#availability).
+* `extras` [optional]: use this object to add further limits to the availability display:
+    * `start_time` [optional]: hide any available slots before this time. Defaults to "09:00".
+    * `end_time` [optional]: hide any available slots `after` this time. Defaults to "17:30".
+    * `interval` [optional]: When selecting a slot, the available options are staggered by this amount. Defaults to `15`.
+* `callback` [required]: the function to be called when a slot has been selected by the user. Receives an object for that slot in this format: 
+    
+    {
+      "start": "2018-11-13T09:00:00Z",
+      "end": "2018-11-13T11:00:00Z",
+      "participants": [
+        { "sub": "acc_12345678" },
+        { "sub": "acc_87654321" }
+      ]
+    }
+
+
+### Example AvailabilityViewer init:
+
+    <div id="cronofy-slot-picker"></div>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.2.1.js"></script>
+    <script>
+        CronofyComponents.AvailabilityViewer({
+            token: "TOKEN_GOES_HERE",
+            target: 'cronofy-availability-viewer',
+            api_domain:"https://api.cronofy.com",
+            query: {
+                participants: [
+                    {
+                        required: "all",
+                        members: [
+                            { sub: "acc_12345678" },
+                            { sub: "acc_87654321" }
+                        ]
+                    }
+                ],
+                required_duration: { minutes: 60 },
+                available_periods: [
+                    { start: "2018-12-11T09:00:00Z", end: "2018-12-11T17:00:00Z" },
+                    { start: "2018-12-12T09:00:00Z", end: "2018-12-12T17:00:00Z" },
+                    { start: "2018-12-13T09:00:00Z", end: "2018-12-13T17:00:00Z" },
+                    { start: "2018-12-17T09:00:00Z", end: "2018-12-17T17:00:00Z" }
+                ],
+            },
+            extras: {
+                start_time:"09:00",
+                end_time: "15:30",
+                interval: 15
+            },
+            styles: {
+                useStyles: true,
+                prefix: "custom-name"
+            },
+            callback: slot => console.log('callback',slot),
         });
     </script>
