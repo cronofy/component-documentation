@@ -217,7 +217,7 @@ The Availability Viewer component will fill the width of its parent DOM element.
 
 ### Example AvailabilityViewer init:
 
-    <div id="cronofy-slot-picker"></div>
+    <div id="cronofy-availability-viewer"></div>
     <script src="https://components.cronofy.com/js/CronofyComponents.v0.3.0.js"></script>
     <script>
         CronofyComponents.AvailabilityViewer({
