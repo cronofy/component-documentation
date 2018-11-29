@@ -136,7 +136,7 @@ The Slot Picker component will fill the width of its parent DOM element. The hei
 ```
 
 * `confirm`[optional]: Boolean that defines if an extra "confirmation" step is used after a user selects a slot from the list. Defaults to `true`.
-* `styles` [optional]: an object containing you custom style values See [Custom Styles](#custom-styles) for details of valid options.
+* `styles` [optional]: an object containing your custom style values.
     * `useStyles`: set to `false` to disable in-built CSS for customizable elements. Most inbuilt styles are locked down (for example the transitions and basic layout), but some are optional (for example, the slot button styles in the Slot Picker component). If `useStyles` is set to `false` the optional styles will not be applied.
     * `prefix`: customizable elements are given a prefixed class name using this value. For example, if the `prefix` was set as "Foo", the class name on a slot element would be `Foo__slot`. Defaults to the name of the component (e.g. `"SlotPicker"`).
     * `height`: the height of the component in pixels. Defaults to `"300px"`.
@@ -215,7 +215,7 @@ The Availability Viewer component will fill the width of its parent DOM element.
 }
 ```
 
-* `styles` [optional]: an object containing you custom style values See [Custom Styles](#custom-styles) for details of valid options.
+* `styles` [optional]: an object containing your custom style values.
     * `useStyles`: set to `false` to disable in-built CSS for customizable elements. Most inbuilt styles are locked down (for example the transitions and basic layout), but some are optional (for example, the slot hover styles in the Availability Viewer component). If `useStyles` is set to `false` the optional styles will not be applied.
     * `prefix`: customizable elements are given a prefixed class name using this value. For example, if the `prefix` was set as "Foo", the class name on a slot element would be `Foo__slot`. Defaults to the name of the component (e.g. `"AvailabilityViewer"`).
 
