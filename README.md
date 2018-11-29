@@ -1,6 +1,6 @@
 # Cronofy Components
 
-* version: 0.3.0
+* version: 0.4.0
 
 > Note: this is a pre-alpha prototype. Breaking-changes may occur on minor version updates. The current components are provided for demoing and experimentation only. This document will be updated when new versions are released.
 
@@ -16,7 +16,7 @@
 
 All components accept some global options, and each have additional component-specific options. For all components, load into your app by including the source `.js` file into your page.
 
-    <script src="https://components.cronofy.com/js/CronofyComponents.v0.3.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.0.js"></script>
 
 Once you've included the `js` file in your project, you can initialize the desired component using the corresponding method and passing in an options as an object. For example, to load the "Agenda" component, your script would look like this:
 
@@ -31,7 +31,7 @@ Using the above `Agenda()` example, CronofyComponents will look for a DOM elemen
 A simple integration into an `index.html` file would look something like this:
 
     <div id="cronofy-agenda"></div>
-    <script src="https://components.cronofy.com/js/CronofyComponents.v0.3.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.0.js"></script>
     <script>
         CronofyComponents.Agenda({
             token: "YOUR_TOKEN",
@@ -42,7 +42,7 @@ A simple integration into an `index.html` file would look something like this:
 For demo purposes, it is possible to bypass the authentication step. If the `demo` option is set to `true`, the component will not make any API calls and will display mock content.
 
     <div id="cronofy-agenda"></div>
-    <script src="https://components.cronofy.com/js/CronofyComponents.v0.3.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.0.js"></script>
     <script>
         CronofyComponents.Agenda({
             target: "cronofy-agenda",
@@ -98,7 +98,7 @@ The Agenda component will fill the width of its parent DOM element, and has a se
 ### Example Agenda init:
 
     <div id="cronofy-agenda"></div>
-    <script src="https://components.cronofy.com/js/CronofyComponents.v0.3.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.0.js"></script>
     <script>
         CronofyComponents.Agenda({
             token: "YOUR_TOKEN",
@@ -136,7 +136,7 @@ The Slot Picker component will fill the width of its parent DOM element. The hei
 ```
 
 * `confirm`[optional]: Boolean that defines if an extra "confirmation" step is used after a user selects a slot from the list. Defaults to `true`.
-* `styles` [optional]: an object containing you custom style values See [Custom Styles](#custom-styles) for details of valid options.
+* `styles` [optional]: an object that controls the pre-packaged component styles.
     * `useStyles`: set to `false` to disable in-built CSS for customizable elements. Most inbuilt styles are locked down (for example the transitions and basic layout), but some are optional (for example, the slot button styles in the Slot Picker component). If `useStyles` is set to `false` the optional styles will not be applied.
     * `prefix`: customizable elements are given a prefixed class name using this value. For example, if the `prefix` was set as "Foo", the class name on a slot element would be `Foo__slot`. Defaults to the name of the component (e.g. `"SlotPicker"`).
     * `height`: the height of the component in pixels. Defaults to `"300px"`.
@@ -153,7 +153,7 @@ Available classes:
 ### Example Slot Picker init:
 
     <div id="cronofy-slot-picker"></div>
-    <script src="https://components.cronofy.com/js/CronofyComponents.v0.3.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.0.js"></script>
     <script>
         CronofyComponents.SlotPicker({
             token: "TOKEN_GOES_HERE",
@@ -215,10 +215,22 @@ The Availability Viewer component will fill the width of its parent DOM element.
 }
 ```
 
+* `styles` [optional]: an object that controls the pre-packaged component styles.
+    * `useStyles`: set to `false` to disable in-built CSS for customizable elements. Most inbuilt styles are locked down (for example the transitions and basic layout), but some are optional (for example, the slot hover styles in the Availability Viewer component). If `useStyles` is set to `false` the optional styles will not be applied.
+    * `prefix`: customizable elements are given a prefixed class name using this value. For example, if the `prefix` was set as "Foo", the class name on a slot element would be `Foo__slot`. Defaults to the name of the component (e.g. `"AvailabilityViewer"`).
+
+Available classes:
+
+* `.{PREFIX}__slot-label`
+* `.{PREFIX}__slot--unavailable`
+* `.{PREFIX}__hover-slot`
+* `.{PREFIX}__hover-slot-times`
+* `.{PREFIX}__hover-slot-tooltip`
+
 ### Example AvailabilityViewer init:
 
     <div id="cronofy-availability-viewer"></div>
-    <script src="https://components.cronofy.com/js/CronofyComponents.v0.3.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.0.js"></script>
     <script>
         CronofyComponents.AvailabilityViewer({
             token: "TOKEN_GOES_HERE",
