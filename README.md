@@ -1,6 +1,6 @@
 # Cronofy Components
 
-* version: 0.4.0
+* version: 0.4.1
 
 > Note: this is a pre-alpha prototype. Breaking-changes may occur on minor version updates. The current components are provided for demoing and experimentation only. This document will be updated when new versions are released.
 
@@ -16,7 +16,7 @@
 
 All components accept some global options, and each have additional component-specific options. For all components, load into your app by including the source `.js` file into your page.
 
-    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.1.js"></script>
 
 Once you've included the `js` file in your project, you can initialize the desired component using the corresponding method and passing in an options as an object. For example, to load the "Agenda" component, your script would look like this:
 
@@ -31,7 +31,7 @@ Using the above `Agenda()` example, CronofyComponents will look for a DOM elemen
 A simple integration into an `index.html` file would look something like this:
 
     <div id="cronofy-agenda"></div>
-    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.1.js"></script>
     <script>
         CronofyComponents.Agenda({
             token: "YOUR_TOKEN",
@@ -42,7 +42,7 @@ A simple integration into an `index.html` file would look something like this:
 For demo purposes, it is possible to bypass the authentication step. If the `demo` option is set to `true`, the component will not make any API calls and will display mock content.
 
     <div id="cronofy-agenda"></div>
-    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.1.js"></script>
     <script>
         CronofyComponents.Agenda({
             target: "cronofy-agenda",
@@ -98,7 +98,7 @@ The Agenda component will fill the width of its parent DOM element, and has a se
 ### Example Agenda init:
 
     <div id="cronofy-agenda"></div>
-    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.1.js"></script>
     <script>
         CronofyComponents.Agenda({
             token: "YOUR_TOKEN",
@@ -153,7 +153,7 @@ Available classes:
 ### Example Slot Picker init:
 
     <div id="cronofy-slot-picker"></div>
-    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.1.js"></script>
     <script>
         CronofyComponents.SlotPicker({
             token: "TOKEN_GOES_HERE",
@@ -230,7 +230,7 @@ Available classes:
 ### Example AvailabilityViewer init:
 
     <div id="cronofy-availability-viewer"></div>
-    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.0.js"></script>
+    <script src="https://components.cronofy.com/js/CronofyComponents.v0.4.1.js"></script>
     <script>
         CronofyComponents.AvailabilityViewer({
             token: "TOKEN_GOES_HERE",
